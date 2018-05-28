@@ -40,7 +40,7 @@
 
 \maketitle
 \begin{abstract}
-There has been seen a hype over the past years in AI and machine learning. Machine learning and AI applications are used in production systems which require significant effort to ensure applications behave correctly and are fully operational. In this paper we describe a recommendation system for AI and machine learning applications which use popular open source machine learning libraries. The described system, Thoth, is capable of storing observations based on which it predicts possible misbehavior in application, application assembling errors or issues when integrating application with other components in a deployment.
+Over the past years, there has been a hype with regards to AI and machine learning. Machine learning and AI are used in production systems with a lot of applications. they require significant effort to ensure applications behave correctly and are fully operational. In this paper we describe a recommendation system for AI and machine learning applications which use popular open source machine learning libraries. The described system, Thoth, is capable of storing observations based on which it predicts possible misbehavior in application, application assembling errors or issues when integrating application with other components in a single deployment.
 \keywords{machine learning \and artificial intelligence \and big data \and graph database \and data processing \and distributed systems \and Python}
 \end{abstract}
 
@@ -48,30 +48,30 @@ There has been seen a hype over the past years in AI and machine learning. Machi
 
 In this paper we present the designed platform that is a recommendation engine for applications and their dependency stacks. The main purpose of the designed system is to predict misbehavior in applications as well as how to prevent from them. The problematic of an application stack is described with a listing of possible issues that can arise when relying directly or indirectly on a logic that, in the end, create the resulting runnable application compound by libraries.
 
-\section{Application Stack}
+\section{Application Software Stack}
 
-To build complex applications, there is often a need to create small building blocks that encapsulate required logic into an easy to access interface. These small units are often reusable and thus create a separate libraries used by libraries themselves as well as by the created application. The described dependency chaining creates direct or transitive requirements (also know as an application stack) for an application that is handled by a dependency management system in the given language ecosystem. Dependency management system hepls to resolve dependencies given the version range specified to meet required functionality offered by required dependencies.
+To build complex applications, there is often a need to create small building blocks that encapsulate required logic into an easy to access interface. These small units are often reusable and thus create a separate libraries used by libraries themselves as well as by the overarching, complex application. The described dependency chaining creates direct and most often also transitive dependencies (also know as an application software stack) for an application that is handled by a dependency management system in the given language ecosystem. Dependency management system hepls to resolve dependencies given a specified version range to meet required functionality offered by required dependencies.
 
-Given the complexity in applications and their dependencies answering a question which dependencies in which versions are the best possible fit for available hardware in the given runtime environment is not trivial and requires knowledge about the language ecosystem used and behavioral characteristics of the successfully assembled application.
+Given the complexity in applications and their dependencies answering a question like "which dependencies in which versions are the best possible fit for available hardware in the given runtime environment" is not trivial and requires knowledge about the language ecosystem used and behavioral characteristics of the successfully assembled application.
 
-As applications evolve, it is not rare to see a broken application that does not assemble due to changes in libraries used, or simply breaks the expected behavior even without any visible notices. Having properly locked versions of libraries helps to solve issues in most cases, but this approach does not help to keep application always up-to-date with recent fixes in libraries used. An automated system Thoth, presented in the upcoming sections, answers and predicts which libraries in which versions are the most suitable ones for the given requirements saving computational and developer time and, moreover, learns from errors that create patterns already seen in other application stacks.
+As the applications evolve, it is not rare to see a broken application that does not assemble due to changes in direct or transitive dependencies, or simply breaks the expected behavior even without any visible notices. Having properly locked down versions of dependencies helps to solve issues in most cases, but this approach does not help to keep application up-to-date with recent fixes in used dependencies. The automated system called Thoth, presented in the upcoming sections, answers and predicts which libraries in which versions are the most suitable ones for the given requirements saving computational and developer time and, moreover, learns from errors that create patterns already seen in other software stacks.
 
-\subsection{Modelling Application Stacks in a Graph Database} \label{section_modelling_app_stacks}
+\subsection{Modelling Software Stacks in a Graph Database} \label{section_modelling_software_stacks}
 
-Considering dependencies, their relations between each other, the whole application can be modeled in a graph database. We chosed JanusGraph graph database to be our data store for storing data in a graph form.
+Considering dependencies, their relations between each other, the whole application can be modeled as a directed acyclic graph. We chosed JanusGraph~\cite{ref_janusgraph} to be our data store for storing data in a graph form.
 
 We model two main distinguishable information:
 
 \begin{itemize}
   \item \emph{Ecosystem data itself}\,--\,how the given ecosystem looks like based on a declarative version range specification, what are dependencies between packages and observations like whether the given package is resolvable.
-  \item \emph{Observations}\,--\,observations we gathered about packages and application stacks during continuous integration system (CI) or continuous delivery system (CD).
+  \item \emph{Observations}\,--\,observations we gathered about packages and software stacks during continuous integration system (CI) or continuous delivery system (CD).
 \end{itemize}
 
 This data model connects data needed for creating recommendations for a user.
 
 \subsection{Observations and Predictions}
 
-To give recommendations to a user there is a need to aggregate data. Thoth for this purpose aggregates raw data mentioned in the section~\ref{section_modelling_app_stacks}. These data create a base for two core types of observations driving recommendations:
+To give recommendations to a user there is a need to aggregate data. Thoth for this purpose aggregates raw data mentioned in the section~\ref{section_modelling_software_stacks}. These data create a base for two core types of observations driving recommendations:
 
 \begin{itemize}
   \item \emph{Package level data}\,--\,information gathered solely on package level. An example of such information can a fact that the given package is installable into the requested runtime environment.
@@ -103,9 +103,9 @@ As discovering new fields and ideas require experiments, project Thoth is design
 
 All experiments can be done in an interactive form that is sharable in the team using Jupyter notebooks. This allows experiments to be easily accommodated in production code.
 
-\subsection{Bots\,--\,Junior Developers}
+\subsection{Bots\,--\,Junior Developers and Cyborg Team Members}
 
-To automate every-days tasks, project Thoth comes with bots that ensure the project dependencies and Thoth's components are always up-to-date. If a component in the Thoth's architecture gets updated, a bot automatically updates all the relevant components. Moreover, if there is given a human review, another bot ensures the pull request is merged only if the change does not break existing parts of Thoth (CI/CD checks).
+To automate every-days tasks, project Thoth provides a set of bots that ensure the project dependencies and Thoth's components are always up-to-date. If a component in the Thoth's architecture gets updated, a bot automatically updates all the relevant components. Moreover, after a human review, another bot ensures the pull request is merged only if the change does not break existing parts of Thoth (CI/CD checks).
 
 \section{Conclusion}
 
@@ -125,10 +125,14 @@ Project Thoth is open source and available on GitHub~\cite{ref_thoth}. It is wri
 Project Thoth on GitHub, \url{https://github.com/thoth-station/}. Last accessed 28 May 2018
 
 \bibitem{ref_openshift}
-OpenShift: Container Application Platform by Red Hat, \\ \url{https://www.openshift.com}. Last accessed 28 May 2018
+OpenShift: Container Application Platform by Red Hat, \\ \url{https://www.openshift.com/}. Last accessed 28 May 2018
 
 \bibitem{ref_ceph}
-Ceph: Homepage \url{https://www.ceph.com}. Last accessed 28 May 2018
+Ceph: Homepage \url{https://www.ceph.com/}. Last accessed 28 May 2018
+\end{thebibliography}
+
+\bibitem{ref_janusgraph}
+JanusGraph Distributed graph database \url{https://janusgraph.org/}. Last accessed 28 May 2018
 \end{thebibliography}
 
 %=============================================================================
