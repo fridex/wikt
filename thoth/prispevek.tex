@@ -30,7 +30,7 @@
 
 \begin{document}
 %
-\title{Project Thoth - A Recommendation Engine for Machine Learning Applications}
+\title{Project Thoth\,--\,A Recommendation Engine for Machine Learning Applications}
 %
 %
 \author{Fridol\'in Pokorn\'y, Christoph G\"orn}
@@ -63,8 +63,8 @@ Considering dependencies, their relations between each other, the whole applicat
 We model two main distinguishable information:
 
 \begin{itemize}
-  \item \emph{Ecosystem data itself} - how the given ecosystem looks like based on a declarative version range specification, what are dependencies between packages and observations like whether the given package is resolvable.
-  \item \emph{Observations} - observations we gathered about packages and application stacks during continuous integration system (CI) or continuous delivery system (CD).
+  \item \emph{Ecosystem data itself}\,--\,how the given ecosystem looks like based on a declarative version range specification, what are dependencies between packages and observations like whether the given package is resolvable.
+  \item \emph{Observations}\,--\,observations we gathered about packages and application stacks during continuous integration system (CI) or continuous delivery system (CD).
 \end{itemize}
 
 This data model connects data needed for creating recommendations for a user.
@@ -103,7 +103,7 @@ As discovering new fields and ideas require experiments, project Thoth is design
 
 All experiments can be done in an interactive form that is sharable in the team using Jupyter notebooks. This allows experiments to be easily accommodated in production code.
 
-\subsection{Bots - Junior Developers}
+\subsection{Bots\,--\,Junior Developers}
 
 To automate every-days tasks, project Thoth comes with bots that ensure the project dependencies and Thoth's components are always up-to-date. If a component in the Thoth's architecture gets updated, a bot automatically updates all the relevant components. Moreover, if there is given a human review, another bot ensures the pull request is merged only if the change does not break existing parts of Thoth (CI/CD checks).
 
