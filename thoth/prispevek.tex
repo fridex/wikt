@@ -52,7 +52,7 @@ In this paper we present the designed platform that is a recommendation engine f
 
 To build complex applications, there is often a need to create small building blocks that encapsulate required logic into an easy to access interface. These small units are often reusable and thus create a separate libraries used by libraries themselves as well as by the created application. The described dependency chaining creates direct or transitive requirements (also know as an application stack) for an application that is handled by a dependency management system in the given language ecosystem. Dependency management system hepls to resolve dependencies given the version range specified to meet required functionality offered by required dependencies.
 
-Given the complexity in applications and their dependencies answering a question which dependencies in which versions are the best possible fit for available hardware in the given runtime environment is not trivial and requires knowledge about the language ecosystem used and behavioral characteristics of the successfully assembled application.
+Given the complexity in applications and their dependencies answering a question which dependencies in which versions are the best possible fit for a\-vaila\-ble hardware in the given runtime environment is not trivial and requires knowledge about the language ecosystem used and behavioral characteristics of the successfully assembled application.
 
 As applications evolve, it is not rare to see a broken application that does not assemble due to changes in libraries used, or simply breaks the expected behavior even without any visible notices. Having properly locked versions of libraries helps to solve issues in most cases, but this approach does not help to keep application always up-to-date with recent fixes in libraries used. An automated system Thoth, presented in the upcoming sections, answers and predicts which libraries in which versions are the most suitable ones for the given requirements saving computational and developer time and, moreover, learns from errors that create patterns already seen in other application stacks.
 
@@ -99,10 +99,9 @@ The last namespace called \emph{Backend} is used to guarantee SLA of the applica
 
 \subsection{Lab}
 
-As discovering new fields and ideas require experiments, project Thoth is designed of loosely coupled packages that, when assembled together, create a ready to deply Thoth but can also assemble an interactive experimental development environment using Jupyter Hub and its Jupyter Notebooks.
+As discovering new fields and ideas require experiments, project Thoth is designed of loosely coupled packages that, when assembled together, create a ready to deply Thoth but can also assemble an interactive experimental development environment using JupyterHub and its Jupyter Notebooks.
 
-All experiments can be done in an interactive form that is sharable in the team using Jupyter notebooks. This allows experiments to be easily accommodated in production code.
-
+All experiments can be done in an interactive form that is sharable in the team using Jupyter Notebooks. This allows experiments to be easily accommodated in production code.
 \subsection{Bots\,--\,Junior Developers}
 
 To automate every-days tasks, project Thoth comes with bots that ensure the project dependencies and Thoth's components are always up-to-date. If a component in the Thoth's architecture gets updated, a bot automatically updates all the relevant components. Moreover, if there is given a human review, another bot ensures the pull request is merged only if the change does not break existing parts of Thoth (CI/CD checks).
